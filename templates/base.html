@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}VoterX Communications{% endblock %}</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0f172a;
+        --navy-mid: #1e293b;
+        --navy-light: #334155;
+        --orange: #f97316;
+        --orange-dark: #ea6a0a;
+        --white: #ffffff;
+        --radius: 16px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Manrope", sans-serif;
+        color: #334155;
+        background: white;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Sections */
+      .section-pad {
+        padding: 100px 0;
+      }
+      .section-light {
+        background: #f8fafc;
+      }
+      .section-dark {
+        background: var(--navy);
+      }
+
+      /* Grids */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+
+      /* Badges */
+      .badge {
+        display: inline-block;
+        background: rgba(249, 115, 22, 0.1);
+        color: var(--orange);
+        border: 1px solid rgba(249, 115, 22, 0.25);
+        padding: 0.35rem 1rem;
+        border-radius: 50px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 1rem;
+      }
+
+      .badge-white {
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.7);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      /* Buttons */
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--orange);
+        color: white;
+        padding: 0.75rem 1.75rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.25s;
+        font-family: "Manrope", sans-serif;
+      }
+
+      .btn-primary:hover {
+        background: var(--orange-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(249, 115, 22, 0.35);
+      }
+
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        color: var(--orange);
+        padding: 0.75rem 1.75rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border: 2px solid var(--orange);
+        cursor: pointer;
+        transition: all 0.25s;
+        font-family: "Manrope", sans-serif;
+      }
+
+      .btn-outline:hover {
+        background: var(--orange);
+        color: white;
+      }
+
+      /* Icon box */
+      .icon-box {
+        width: 56px;
+        height: 56px;
+        background: rgba(249, 115, 22, 0.1);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+        color: var(--orange);
+      }
+
+      .icon-box svg {
+        width: 26px;
+        height: 26px;
+        stroke: var(--orange);
+      }
+
+      /* Stats */
+      .stat-number {
+        font-family: "Manrope", sans-serif;
+        font-weight: 900;
+        font-size: 2.5rem;
+        color: var(--navy);
+        line-height: 1;
+      }
+
+      /* Text utility */
+      .text-orange {
+        color: var(--orange);
+      }
+
+      /* Forms */
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #374151;
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        color: var(--navy);
+        font-family: "Manrope", sans-serif;
+        transition: all 0.2s;
+        outline: none;
+        background: white;
+      }
+
+      .form-input:focus {
+        border-color: var(--orange);
+        box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .grid-2,
+        .grid-3,
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+        .section-pad {
+          padding: 60px 0;
+        }
+      }
+    </style>
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        padding: 1rem 0;
+      "
+    >
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <a
+          href="{% url 'home' %}"
+          style="
+            font-family: &quot;Manrope&quot;, sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: white;
+          "
+        >
+          Voter<span style="color: var(--orange)">X</span>
+        </a>
+        <div style="display: flex; gap: 2rem; align-items: center">
+          <a
+            href="{% url 'product_list' %}"
+            style="
+              color: rgba(255, 255, 255, 0.65);
+              font-size: 0.875rem;
+              font-weight: 600;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.65)'"
+            >Products</a
+          >
+          <a
+            href="{% url 'service_list' %}"
+            style="
+              color: rgba(255, 255, 255, 0.65);
+              font-size: 0.875rem;
+              font-weight: 600;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.65)'"
+            >Services</a
+          >
+          <a
+            href="{% url 'cart' %}"
+            style="
+              color: rgba(255, 255, 255, 0.65);
+              font-size: 0.875rem;
+              font-weight: 600;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.65)'"
+            >Cart</a
+          >
+          {% if user.is_authenticated %}
+          <a
+            href="{% url 'dashboard' %}"
+            style="
+              color: rgba(255, 255, 255, 0.65);
+              font-size: 0.875rem;
+              font-weight: 600;
+            "
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.65)'"
+            >Dashboard</a
+          >
+          <a
+            href="{% url 'logout' %}"
+            style="
+              color: rgba(255, 255, 255, 0.65);
+              font-size: 0.875rem;
+              font-weight: 600;
+            "
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.65)'"
+            >Logout</a
+          >
+          {% else %}
+          <a
+            href="{% url 'login' %}"
+            style="
+              color: rgba(255, 255, 255, 0.65);
+              font-size: 0.875rem;
+              font-weight: 600;
+            "
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.65)'"
+            >Sign In</a
+          >
+          <a
+            href="{% url 'register' %}"
+            class="btn-primary"
+            style="padding: 0.55rem 1.25rem; font-size: 0.85rem"
+            >Get Started</a
+          >
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <!-- MESSAGES -->
+    {% if messages %}
+    <div
+      style="
+        position: fixed;
+        top: 80px;
+        right: 1.5rem;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      "
+    >
+      {% for message in messages %}
+      <div
+        style="background:white;border-left:4px solid {% if message.tags == 'error' %}#ef4444{% else %}var(--orange){% endif %};padding:0.75rem 1.25rem;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);font-size:0.875rem;font-weight:600;color:var(--navy);max-width:320px;"
+      >
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+{% block content %}{% endblock %}
+
+    <!-- FOOTER -->
+    <footer
+      style="
+        background: #060d1a;
+        padding: 3rem 0 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      "
+    >
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+        "
+      >
+        <div
+          style="
+            font-family: &quot;Manrope&quot;, sans-serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: white;
+          "
+        >
+          Voter<span style="color: var(--orange)">X</span>
+          <span
+            style="
+              color: rgba(255, 255, 255, 0.4);
+              font-weight: 400;
+              font-size: 0.875rem;
+            "
+            >Communications</span
+          >
+        </div>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap">
+          <a
+            href="{% url 'product_list' %}"
+            style="
+              color: rgba(255, 255, 255, 0.45);
+              font-size: 0.82rem;
+              transition: color 0.2s;
+            "
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+            >Products</a
+          >
+          <a
+            href="{% url 'service_list' %}"
+            style="color: rgba(255, 255, 255, 0.45); font-size: 0.82rem"
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+            >Services</a
+          >
+          <a
+            href="{% url 'login' %}"
+            style="color: rgba(255, 255, 255, 0.45); font-size: 0.82rem"
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+            >Login</a
+          >
+          <a
+            href="{% url 'register' %}"
+            style="color: rgba(255, 255, 255, 0.45); font-size: 0.82rem"
+            onmouseover="this.style.color = 'white'"
+            onmouseout="this.style.color = 'rgba(255,255,255,0.45)'"
+            >Register</a
+          >
+        </div>
+        <p style="color: rgba(255, 255, 255, 0.25); font-size: 0.78rem">
+          © 2026 VoterX Communications. Nairobi, Kenya.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

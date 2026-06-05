@@ -1,0 +1,396 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap");
+
+  body {
+    background: #0a0f1e !important;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .dash-header h1 {
+    font-family: "Syne", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #f8fafc;
+    letter-spacing: -0.5px;
+  }
+
+  .dash-header p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+  }
+
+  .btn-shop {
+    padding: 0.65rem 1.4rem;
+    background: #1d4ed8;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .btn-shop:hover {
+    background: #3b82f6;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Stat cards */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-card {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 1.4rem;
+    transition: all 0.3s;
+  }
+
+  .stat-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .stat-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .stat-card .number {
+    font-family: "Syne", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #f8fafc;
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-card .label {
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  /* Orders section */
+  .section-title {
+    font-family: "Syne", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.07);
+    margin-left: 0.5rem;
+  }
+
+  /* Table */
+  .table-wrap {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .orders-table thead tr {
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .orders-table th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #475569;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .orders-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background 0.2s;
+  }
+
+  .orders-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  .orders-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .orders-table td {
+    padding: 1rem 1.2rem;
+    color: #cbd5e1;
+    font-size: 0.875rem;
+  }
+
+  .order-id {
+    color: #f8fafc;
+    font-weight: 600;
+    font-family: "Syne", sans-serif;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .badge.pending {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fbbf24;
+  }
+  .badge.confirmed {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+  }
+  .badge.completed {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #4ade80;
+  }
+  .badge.cancelled {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+  }
+  .badge.processing {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #a78bfa;
+  }
+
+  .install-yes {
+    color: #06b6d4;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+  }
+
+  .install-no {
+    color: #475569;
+    font-size: 0.75rem;
+  }
+
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+  }
+
+  .empty-state .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .empty-state h3 {
+    font-family: "Syne", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 0.5rem;
+  }
+  .empty-state p {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-start {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: #1d4ed8;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-start:hover {
+    background: #3b82f6;
+  }
+
+  /* Quick links */
+  .quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .quick-link {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .quick-link:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    background: rgba(59, 130, 246, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .quick-link .ql-icon {
+    font-size: 1.4rem;
+  }
+  .quick-link span {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 500; z
+  }
+</style>
+
+<!-- Header -->
+<div class="dash-header">
+  <div>
+    <h1>Welcome back, {{ user.first_name|default:user.username }} 👋</h1>
+    <p>Here's a summary of your account activity.</p>
+  </div>
+  <a href="{% url 'product_list' %}" class="btn-shop">+ New Order</a>
+</div>
+
+<!-- Stat Cards -->
+<div class="stats-row">
+  <div class="stat-card">
+    <span class="icon">📦</span>
+    <span class="number">{{ orders.count }}</span>
+    <span class="label">Total Orders</span>
+  </div>
+  <div class="stat-card">
+    <span class="icon">⏳</span>
+    <span class="number">{{ orders|length }}</span>
+    <span class="label">Active Orders</span>
+  </div>
+  <div class="stat-card">
+    <span class="icon">🔧</span>
+    <span class="number">{{ orders|length }}</span>
+    <span class="label">Installations</span>
+  </div>
+  <div class="stat-card">
+    <span class="icon">✅</span>
+    <span class="number">0</span>
+    <span class="label">Completed</span>
+  </div>
+</div>
+
+<!-- Orders Table -->
+<div class="section-title">Recent Orders</div>
+
+{% if orders %}
+<div class="table-wrap">
+  <table class="orders-table">
+    <thead>
+      <tr>
+        <th>Order</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Installation</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td><span class="order-id">#{{ order.id }}</span></td>
+        <td>KES {{ order.total_amount }}</td>
+        <td>
+          <span class="badge {{ order.status }}">{{ order.status|title }}</span>
+        </td>
+        <td>
+          {% if order.needs_installation %}
+          <span class="install-yes">⚙ Yes</span>
+          {% else %}
+          <span class="install-no">—</span>
+          {% endif %}
+        </td>
+        <td>{{ order.created_at|date:"M d, Y" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% else %}
+<div class="empty-state">
+  <span class="empty-icon">🛒</span>
+  <h3>No orders yet</h3>
+  <p>You haven't placed any orders. Start browsing our products!</p>
+  <a href="{% url 'product_list' %}" class="btn-start">Browse Products →</a>
+</div>
+{% endif %}
+
+<!-- Quick Links -->
+<div class="section-title" style="margin-top: 2.5rem">Quick Actions</div>
+<div class="quick-links">
+  <a href="{% url 'product_list' %}" class="quick-link">
+    <span class="ql-icon">🖥️</span>
+    <span>Shop Products</span>
+  </a>
+  <a href="{% url 'service_list' %}" class="quick-link">
+    <span class="ql-icon">🔧</span>
+    <span>Book a Service</span>
+  </a>
+  <a href="{% url 'cart' %}" class="quick-link">
+    <span class="ql-icon">🛒</span>
+    <span>View Cart</span>
+  </a>
+  <a href="{% url 'logout' %}" class="quick-link">
+    <span class="ql-icon">🚪</span>
+    <span>Sign Out</span>
+  </a>
+</div>
+
+{% endblock %}

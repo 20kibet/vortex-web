@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Sign In — VoterX Communications{% endblock %}
+{% block content %}
+<div style="min-height:calc(100vh - 72px);background:var(--navy);display:flex;align-items:center;justify-content:center;padding:4rem 1.5rem;">
+  <div style="position:relative;z-index:2;width:100%;max-width:440px;">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <a href="{% url 'home' %}" style="font-family:'Manrope',sans-serif;font-weight:900;font-size:1.75rem;color:white;text-decoration:none;">
+        <span style="color:var(--orange);">●</span> VoterX
+      </a>
+    </div>
+    <div style="background:white;border-radius:var(--radius);padding:2.5rem;box-shadow:0 24px 80px rgba(0,0,0,0.3);">
+      <h1 style="font-size:1.75rem;margin:0 0 0.5rem;color:var(--navy);">Welcome back</h1>
+      <p style="color:#64748b;font-size:0.9rem;margin:0 0 2rem;">Sign in to your VoterX account</p>
+      {% if messages %}{% for message in messages %}
+      <div style="background:#fef2f2;border:1px solid #fecaca;color:#dc2626;padding:0.75rem 1rem;border-radius:8px;font-size:0.875rem;margin-bottom:1.25rem;">{{ message }}</div>
+      {% endfor %}{% endif %}
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" name="email" class="form-input" placeholder="you@company.co.ke" required autofocus>
+        </div>
+        <div class="form-group" style="margin-bottom:1.75rem;">
+          <label class="form-label">Password</label>
+          <input type="password" name="password" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary" style="display:block;width:100%;padding:1rem;font-size:1rem;text-align:center;border:none;cursor:pointer;">
+          Sign In →
+        </button>
+      </form>
+      <div style="text-align:center;margin-top:1.75rem;color:#64748b;font-size:0.875rem;">
+        Don't have an account?
+        <a href="{% url 'register' %}" style="color:var(--orange);font-weight:700;text-decoration:none;margin-left:4px;">Create one free</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
