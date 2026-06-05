@@ -43,6 +43,25 @@ def login_view(request):
     return render(request, 'accounts/login.html')
 
 
+def login_view(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, username=email, password=password)
+
+        if user:
+            login(request, user)
+            # Redirect based on role
+            if user.is_superuser or user.role == 'admin':
+                return redirect('admin_dashboard')
+            else:
+                return redirect('dashboard')
+        else:
+            messages.error(request, 'Invalid email or password')
+
+    return render(request, 'accounts/login.html')
+
+
 def logout_view(request):
     logout(request)
     return redirect('home')

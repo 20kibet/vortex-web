@@ -33,8 +33,3 @@ def product_detail(request, slug):
     })
 
 
-def home(request):
-    context = {
-        'chart_heights': [40, 70, 55, 90, 65, 80, 95, 60, 85, 75]
-    }
-    return render(request, 'products/home.html', context)

@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% load static %} {% block title %}VoterX
-Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
+{% extends 'base.html' %} {% block title %}VoterX Communications — Enterprise
+ICT Solutions{% endblock %} {% block extra_head %}
 <style>
   /* ── HERO ── */
   .hero {
@@ -10,7 +10,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     position: relative;
     overflow: hidden;
   }
-
   .hero-grid-bg {
     position: absolute;
     inset: 0;
@@ -19,7 +18,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
       linear-gradient(90deg, rgba(249, 115, 22, 0.06) 1px, transparent 1px);
     background-size: 60px 60px;
   }
-
   .hero-glow {
     position: absolute;
     width: 600px;
@@ -34,7 +32,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     right: -100px;
     pointer-events: none;
   }
-
   .hero-glow-2 {
     position: absolute;
     width: 400px;
@@ -49,7 +46,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     left: 100px;
     pointer-events: none;
   }
-
   .hero-content {
     position: relative;
     z-index: 2;
@@ -61,7 +57,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     gap: 4rem;
     align-items: center;
   }
-
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -79,7 +74,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     margin-bottom: 1.75rem;
     animation: fadeUp 0.6s ease both;
   }
-
   .hero-badge .pulse-dot {
     width: 8px;
     height: 8px;
@@ -87,7 +81,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
-
   @keyframes pulse {
     0%,
     100% {
@@ -99,7 +92,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
       transform: scale(1.3);
     }
   }
-
   .hero h1 {
     font-size: clamp(2.8rem, 4.5vw, 4.2rem);
     line-height: 1.1;
@@ -107,12 +99,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     margin: 0 0 1.5rem;
     animation: fadeUp 0.7s 0.1s ease both;
   }
-
   .hero h1 .highlight {
     color: var(--orange);
-    position: relative;
   }
-
   .hero-desc {
     color: rgba(255, 255, 255, 0.6);
     font-size: 1.05rem;
@@ -120,20 +109,17 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     margin-bottom: 2.5rem;
     animation: fadeUp 0.7s 0.2s ease both;
   }
-
   .hero-cta {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     animation: fadeUp 0.7s 0.3s ease both;
   }
-
   .hero-cta .btn-primary {
     padding: 0.9rem 2rem;
     font-size: 0.95rem;
     box-shadow: 0 8px 30px rgba(249, 115, 22, 0.3);
   }
-
   .hero-cta .btn-ghost {
     display: inline-flex;
     align-items: center;
@@ -152,17 +138,14 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     border-color: var(--orange);
     color: var(--orange);
   }
-
   .hero-visual {
     animation: fadeUp 0.8s 0.2s ease both;
     position: relative;
   }
-
   .hero-card-stack {
     position: relative;
     height: 480px;
   }
-
   .hero-main-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -174,7 +157,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     left: 0;
     right: 0;
   }
-
   .hero-stat-card {
     background: var(--orange);
     border-radius: 20px;
@@ -182,7 +164,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     position: absolute;
     box-shadow: 0 16px 40px rgba(249, 115, 22, 0.3);
   }
-
   .hero-stat-card .num {
     font-family: "Manrope", sans-serif;
     font-weight: 900;
@@ -190,14 +171,12 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     color: white;
     line-height: 1;
   }
-
   .hero-stat-card .lbl {
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
     margin-top: 4px;
   }
-
   .mini-card {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -209,7 +188,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     align-items: center;
     gap: 0.75rem;
   }
-
   .mini-card .icon {
     font-size: 1.5rem;
   }
@@ -223,7 +201,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.75rem;
   }
-
   @keyframes fadeUp {
     from {
       opacity: 0;
@@ -234,14 +211,12 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
       transform: translateY(0);
     }
   }
-
   /* ── STATS BAR ── */
   .stats-bar {
     background: white;
     padding: 2.5rem 0;
     box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
   }
-
   .stats-grid {
     max-width: 1280px;
     margin: 0 auto;
@@ -250,7 +225,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
   }
-
   .stat-item {
     text-align: center;
     padding: 1rem;
@@ -259,8 +233,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
   .stat-item:last-child {
     border-right: none;
   }
-
-  /* ── SERVICES ── */
+  /* ── SERVICE CARDS ── */
   .service-card {
     background: white;
     border-radius: var(--radius);
@@ -271,7 +244,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     position: relative;
     overflow: hidden;
   }
-
   .service-card::before {
     content: "";
     position: absolute;
@@ -282,26 +254,16 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     background: var(--orange);
     transform: scaleX(0);
     transition: transform 0.3s ease;
-    border-radius: 0 0 4px 4px;
   }
-
   .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
     border-color: rgba(249, 115, 22, 0.15);
   }
-
   .service-card:hover::before {
     transform: scaleX(1);
   }
-
   /* ── ABOUT ── */
-  .about-img-wrap {
-    position: relative;
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-
   .about-img-placeholder {
     background: linear-gradient(
       135deg,
@@ -316,7 +278,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     position: relative;
     overflow: hidden;
   }
-
   .about-badge-float {
     position: absolute;
     bottom: 2rem;
@@ -327,7 +288,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     padding: 1.25rem 1.5rem;
     box-shadow: 0 12px 32px rgba(249, 115, 22, 0.35);
   }
-
   /* ── PRODUCT CARDS ── */
   .product-card {
     background: white;
@@ -336,12 +296,10 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
     transition: all 0.3s ease;
   }
-
   .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.14);
   }
-
   .product-img {
     height: 200px;
     background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
@@ -352,24 +310,20 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     position: relative;
     overflow: hidden;
   }
-
   .product-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
   .product-body {
     padding: 1.5rem;
   }
-
   .product-price {
     font-family: "Manrope", sans-serif;
     font-weight: 800;
     font-size: 1.4rem;
     color: var(--orange);
   }
-
   .product-name {
     font-family: "Manrope", sans-serif;
     font-weight: 700;
@@ -377,8 +331,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     color: var(--navy);
     margin: 0.5rem 0;
   }
-
-  /* ── CCTV SECTION ── */
+  /* ── CCTV ── */
   .cctv-feature {
     display: flex;
     gap: 1rem;
@@ -393,7 +346,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     background: rgba(249, 115, 22, 0.08);
     border-color: rgba(249, 115, 22, 0.2);
   }
-
   /* ── TESTIMONIALS ── */
   .testimonial-card {
     background: white;
@@ -403,7 +355,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     position: relative;
     border: 1px solid #f1f5f9;
   }
-
   .testimonial-card::before {
     content: '"';
     position: absolute;
@@ -415,13 +366,11 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     font-family: Georgia, serif;
     line-height: 1;
   }
-
   .stars {
     color: var(--orange);
     font-size: 1rem;
     letter-spacing: 2px;
   }
-
   /* ── CONTACT ── */
   .contact-card {
     background: white;
@@ -429,7 +378,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
     padding: 3rem;
     box-shadow: 0 8px 40px rgba(15, 23, 42, 0.1);
   }
-
   .contact-info-item {
     display: flex;
     align-items: flex-start;
@@ -439,33 +387,29 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
 </style>
 {% endblock %} {% block content %}
 
-<!-- ══════════════════════════════════════════
-     HERO SECTION
-══════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
 
   <div class="hero-content" style="padding-top: 2rem; padding-bottom: 4rem">
-    <!-- LEFT -->
     <div>
       <div class="hero-badge">
         <span class="pulse-dot"></span>
         Enterprise ICT Solutions
       </div>
-
       <h1>
-        Powering Business<br />
-        with <span class="highlight">Smart Technology</span>
+        Powering Business<br />with
+        <span class="highlight">Smart Technology</span>
       </h1>
-
       <p class="hero-desc">
         From enterprise networking and CCTV security systems to high-performance
         computers — VoterX Communications delivers end-to-end ICT infrastructure
         for businesses across East Africa.
       </p>
-
       <div class="hero-cta">
         <a href="{% url 'product_list' %}" class="btn-primary"
           >Explore Products</a
@@ -488,8 +432,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           View Services
         </a>
       </div>
-
-      <!-- Trust badges -->
       <div
         style="
           margin-top: 3rem;
@@ -559,10 +501,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
       </div>
     </div>
 
-    <!-- RIGHT – floating card stack -->
+    <!-- RIGHT: floating card stack -->
     <div class="hero-visual">
       <div class="hero-card-stack">
-        <!-- Main card -->
         <div class="hero-main-card">
           <div
             style="
@@ -609,7 +550,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
               ></div>
             </div>
           </div>
-          <!-- Fake chart bars -->
+          <!-- Chart bars (plain HTML, no split filter) -->
           <div
             style="
               display: flex;
@@ -619,22 +560,105 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
               margin-bottom: 1.5rem;
             "
           >
-            {% for h in chart_heights %}
             <div
-              style="flex:1; background:rgba(249,115,22,0.25); border-radius:6px 6px 0 0; height:{{ h }}%; position:relative; transition:all 0.3s;"
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.25);
+                border-radius: 6px 6px 0 0;
+                height: 40%;
+              "
               onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
               onmouseout="this.style.background = 'rgba(249,115,22,0.25)'"
             ></div>
-            {% endfor %}
             <div
               style="
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background: rgba(255, 255, 255, 0.1);
+                flex: 1;
+                background: rgba(249, 115, 22, 0.25);
+                border-radius: 6px 6px 0 0;
+                height: 70%;
               "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.25)'"
+            ></div>
+            <div
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.25);
+                border-radius: 6px 6px 0 0;
+                height: 55%;
+              "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.25)'"
+            ></div>
+            <div
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.7);
+                border-radius: 6px 6px 0 0;
+                height: 90%;
+              "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.7)'"
+            ></div>
+            <div
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.25);
+                border-radius: 6px 6px 0 0;
+                height: 65%;
+              "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.25)'"
+            ></div>
+            <div
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.25);
+                border-radius: 6px 6px 0 0;
+                height: 80%;
+              "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.25)'"
+            ></div>
+            <div
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.5);
+                border-radius: 6px 6px 0 0;
+                height: 95%;
+              "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.5)'"
+            ></div>
+            <div
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.25);
+                border-radius: 6px 6px 0 0;
+                height: 60%;
+              "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.25)'"
+            ></div>
+            <div
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.25);
+                border-radius: 6px 6px 0 0;
+                height: 85%;
+              "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.25)'"
+            ></div>
+            <div
+              style="
+                flex: 1;
+                background: rgba(249, 115, 22, 0.25);
+                border-radius: 6px 6px 0 0;
+                height: 75%;
+              "
+              onmouseover="this.style.background = 'rgba(249,115,22,0.7)'"
+              onmouseout="this.style.background = 'rgba(249,115,22,0.25)'"
             ></div>
           </div>
           <div
@@ -696,14 +720,10 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             </div>
           </div>
         </div>
-
-        <!-- Floating stat card -->
         <div class="hero-stat-card" style="bottom: 80px; right: -30px">
           <div class="num">500+</div>
           <div class="lbl">Projects Done</div>
         </div>
-
-        <!-- Floating mini card -->
         <div class="mini-card" style="top: 0; right: 20px">
           <span class="icon">🛡️</span>
           <div>
@@ -711,8 +731,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             <div class="sub">24/7 monitoring</div>
           </div>
         </div>
-
-        <!-- Another floating mini card -->
         <div class="mini-card" style="bottom: 20px; left: -20px">
           <span class="icon">🌐</span>
           <div>
@@ -725,9 +743,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════
      STATS BAR
-══════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <section class="stats-bar">
   <div class="stats-grid">
     <div class="stat-item">
@@ -757,9 +775,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════
      SERVICE FEATURES
-══════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <section class="section-pad section-light">
   <div class="container">
     <div style="text-align: center; max-width: 600px; margin: 0 auto 4rem">
@@ -774,9 +792,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
         technology ecosystems that scale with your business.
       </p>
     </div>
-
     <div class="grid-3">
-      <!-- Networking -->
       <div class="service-card">
         <div class="icon-box">
           <svg
@@ -804,7 +820,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           "
         >
           Structured cabling, LAN/WAN setup, fiber optic, RJ45 patching and
-          enterprise-grade router & switch configuration.
+          enterprise-grade router &amp; switch configuration.
         </p>
         <a
           href="{% url 'service_list' %}"
@@ -814,16 +830,11 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             font-size: 0.875rem;
             text-decoration: none;
             font-family: &quot;Manrope&quot;, sans-serif;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
           "
+          >Learn More →</a
         >
-          Learn More →
-        </a>
       </div>
 
-      <!-- CCTV -->
       <div class="service-card">
         <div class="icon-box">
           <svg
@@ -840,7 +851,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           </svg>
         </div>
         <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem">
-          CCTV & Security Systems
+          CCTV &amp; Security Systems
         </h3>
         <p
           style="
@@ -862,12 +873,10 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             text-decoration: none;
             font-family: &quot;Manrope&quot;, sans-serif;
           "
+          >Learn More →</a
         >
-          Learn More →
-        </a>
       </div>
 
-      <!-- Computers -->
       <div class="service-card">
         <div class="icon-box">
           <svg
@@ -884,7 +893,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           </svg>
         </div>
         <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem">
-          Computer Sales & Support
+          Computer Sales &amp; Support
         </h3>
         <p
           style="
@@ -906,12 +915,10 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             text-decoration: none;
             font-family: &quot;Manrope&quot;, sans-serif;
           "
+          >Learn More →</a
         >
-          Learn More →
-        </a>
       </div>
 
-      <!-- IT Support -->
       <div class="service-card">
         <div class="icon-box">
           <svg
@@ -933,7 +940,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           </svg>
         </div>
         <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem">
-          IT Maintenance & Support
+          IT Maintenance &amp; Support
         </h3>
         <p
           style="
@@ -955,12 +962,10 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             text-decoration: none;
             font-family: &quot;Manrope&quot;, sans-serif;
           "
+          >Learn More →</a
         >
-          Learn More →
-        </a>
       </div>
 
-      <!-- VoIP -->
       <div class="service-card">
         <div class="icon-box">
           <svg
@@ -977,7 +982,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           </svg>
         </div>
         <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem">
-          VoIP & Communication
+          VoIP &amp; Communication
         </h3>
         <p
           style="
@@ -999,12 +1004,10 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             text-decoration: none;
             font-family: &quot;Manrope&quot;, sans-serif;
           "
+          >Learn More →</a
         >
-          Learn More →
-        </a>
       </div>
 
-      <!-- Cloud -->
       <div class="service-card">
         <div class="icon-box">
           <svg
@@ -1021,7 +1024,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           </svg>
         </div>
         <h3 style="font-size: 1.2rem; margin: 0 0 0.75rem">
-          Cloud & Server Solutions
+          Cloud &amp; Server Solutions
         </h3>
         <p
           style="
@@ -1043,17 +1046,16 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             text-decoration: none;
             font-family: &quot;Manrope&quot;, sans-serif;
           "
+          >Learn More →</a
         >
-          Learn More →
-        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════
      ABOUT COMPANY
-══════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <section class="section-pad section-dark">
   <div class="container">
     <div
@@ -1064,9 +1066,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
         align-items: center;
       "
     >
-      <!-- LEFT: Image placeholder -->
       <div class="about-img-placeholder">
-        <!-- Decorative circuit pattern -->
         <svg
           width="320"
           height="260"
@@ -1192,7 +1192,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             >Technology Core</span
           >
         </div>
-        <!-- Float badge -->
         <div class="about-badge-float">
           <div
             style="
@@ -1217,7 +1216,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
         </div>
       </div>
 
-      <!-- RIGHT: Content -->
       <div>
         <div class="badge badge-white">About VoterX</div>
         <h2
@@ -1253,7 +1251,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           enterprise server rooms to single-office CCTV systems with the same
           commitment to quality.
         </p>
-
         <div
           style="
             display: grid;
@@ -1343,16 +1340,15 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             HP Business Partner
           </div>
         </div>
-
         <a href="#" class="btn-primary">Learn More About Us</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════
      FEATURED PRODUCTS
-══════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <section class="section-pad section-light">
   <div class="container">
     <div
@@ -1387,14 +1383,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           {% if product.image %}
           <img src="{{ product.image.url }}" alt="{{ product.name }}" />
           {% else %}
-          <div style="font-size: 4rem; opacity: 0.4">
-            {% if 'router' in product.name|lower %}📡 {% elif 'camera' in
-            product.name|lower or 'cctv' in product.name|lower %}📷 {% elif
-            'laptop' in product.name|lower or 'computer' in product.name|lower
-            %}💻 {% elif 'cable' in product.name|lower or 'rj' in
-            product.name|lower %}🔌 {% elif 'switch' in product.name|lower %}🔀
-            {% else %}🖥️ {% endif %}
-          </div>
+          <div style="font-size: 4rem; opacity: 0.4">📦</div>
           {% endif %}
           <div
             style="
@@ -1446,8 +1435,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
       </div>
       {% endfor %}
     </div>
+
     {% else %}
-    <!-- Placeholder cards when no products -->
+    <!-- Placeholder cards when no products in DB yet -->
     <div class="grid-3">
       <div class="product-card">
         <div class="product-img">
@@ -1479,8 +1469,8 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
               margin: 0.5rem 0 1rem;
             "
           >
-            Enterprise-grade product with full warranty and technical support
-            included.
+            Enterprise dual WAN router with VPN support and advanced security
+            features.
           </p>
           <div
             style="
@@ -1516,11 +1506,11 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
               font-family: &quot;Manrope&quot;, sans-serif;
             "
           >
-            Networking
+            CCTV
           </div>
         </div>
         <div class="product-body">
-          <div class="product-name">Hikvision IP Camera</div>
+          <div class="product-name">Hikvision 4MP IP Camera</div>
           <p
             style="
               color: #64748b;
@@ -1529,8 +1519,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
               margin: 0.5rem 0 1rem;
             "
           >
-            Enterprise-grade product with full warranty and technical support
-            included.
+            4MP outdoor bullet camera with night vision and PoE support.
           </p>
           <div
             style="
@@ -1570,7 +1559,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           </div>
         </div>
         <div class="product-body">
-          <div class="product-name">HP ProBook Laptop</div>
+          <div class="product-name">HP ProBook 450 G9</div>
           <p
             style="
               color: #64748b;
@@ -1579,8 +1568,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
               margin: 0.5rem 0 1rem;
             "
           >
-            Enterprise-grade product with full warranty and technical support
-            included.
+            Business laptop with Intel Core i5, 16GB RAM and 512GB SSD.
           </p>
           <div
             style="
@@ -1599,164 +1587,14 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           </div>
         </div>
       </div>
-      <div class="product-card">
-        <div class="product-img">
-          <div style="font-size: 4rem; opacity: 0.4">🔌</div>
-          <div
-            style="
-              position: absolute;
-              top: 1rem;
-              left: 1rem;
-              background: var(--orange);
-              color: white;
-              border-radius: 8px;
-              padding: 0.3rem 0.75rem;
-              font-size: 0.75rem;
-              font-weight: 700;
-              font-family: &quot;Manrope&quot;, sans-serif;
-            "
-          >
-            Accessories
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-name">Cat6 RJ45 Cable 100m</div>
-          <p
-            style="
-              color: #64748b;
-              font-size: 0.85rem;
-              line-height: 1.5;
-              margin: 0.5rem 0 1rem;
-            "
-          >
-            Enterprise-grade product with full warranty and technical support
-            included.
-          </p>
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            "
-          >
-            <div class="product-price">KES 8,500</div>
-            <a
-              href="{% url 'product_list' %}"
-              class="btn-primary"
-              style="padding: 0.5rem 1.25rem; font-size: 0.8rem"
-              >View</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img">
-          <div style="font-size: 4rem; opacity: 0.4">🔀</div>
-          <div
-            style="
-              position: absolute;
-              top: 1rem;
-              left: 1rem;
-              background: var(--orange);
-              color: white;
-              border-radius: 8px;
-              padding: 0.3rem 0.75rem;
-              font-size: 0.75rem;
-              font-weight: 700;
-              font-family: &quot;Manrope&quot;, sans-serif;
-            "
-          >
-            Accessories
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-name">TP-Link 24-Port Switch</div>
-          <p
-            style="
-              color: #64748b;
-              font-size: 0.85rem;
-              line-height: 1.5;
-              margin: 0.5rem 0 1rem;
-            "
-          >
-            Enterprise-grade product with full warranty and technical support
-            included.
-          </p>
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            "
-          >
-            <div class="product-price">KES 62,000</div>
-            <a
-              href="{% url 'product_list' %}"
-              class="btn-primary"
-              style="padding: 0.5rem 1.25rem; font-size: 0.8rem"
-              >View</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img">
-          <div style="font-size: 4rem; opacity: 0.4">🔋</div>
-          <div
-            style="
-              position: absolute;
-              top: 1rem;
-              left: 1rem;
-              background: var(--orange);
-              color: white;
-              border-radius: 8px;
-              padding: 0.3rem 0.75rem;
-              font-size: 0.75rem;
-              font-weight: 700;
-              font-family: &quot;Manrope&quot;, sans-serif;
-            "
-          >
-            Accessories
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-name">UPS 1500VA Battery</div>
-          <p
-            style="
-              color: #64748b;
-              font-size: 0.85rem;
-              line-height: 1.5;
-              margin: 0.5rem 0 1rem;
-            "
-          >
-            Enterprise-grade product with full warranty and technical support
-            included.
-          </p>
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            "
-          >
-            <div class="product-price">KES 35,000</div>
-            <a
-              href="{% url 'product_list' %}"
-              class="btn-primary"
-              style="padding: 0.5rem 1.25rem; font-size: 0.8rem"
-              >View</a
-            >
-          </div>
-        </div>
-      </div>
     </div>
     {% endif %}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     CCTV SOLUTIONS — Dark Section
-══════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     CCTV SOLUTIONS
+══════════════════════════════════════ -->
 <section class="section-pad section-dark">
   <div class="container">
     <div
@@ -1768,7 +1606,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
       "
     >
       <div>
-        <div class="badge badge-white">CCTV & Security</div>
+        <div class="badge badge-white">CCTV &amp; Security</div>
         <h2
           style="
             font-size: clamp(2rem, 3vw, 2.6rem);
@@ -1790,7 +1628,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           premises — from indoor to outdoor, day or night. We're authorised
           Hikvision and Dahua dealers with a team of certified installers.
         </p>
-
         <div style="display: flex; flex-direction: column; gap: 1rem">
           <div class="cctv-feature">
             <div
@@ -1826,7 +1663,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
                 font-size: 0.9rem;
                 font-weight: 500;
               "
-              >HD & 4K IP Cameras</span
+              >HD &amp; 4K IP Cameras</span
             >
           </div>
           <div class="cctv-feature">
@@ -1863,7 +1700,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
                 font-size: 0.9rem;
                 font-weight: 500;
               "
-              >Night Vision & IR</span
+              >Night Vision &amp; IR</span
             >
           </div>
           <div class="cctv-feature">
@@ -1937,7 +1774,7 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
                 font-size: 0.9rem;
                 font-weight: 500;
               "
-              >NVR & DVR Systems</span
+              >NVR &amp; DVR Systems</span
             >
           </div>
           <div class="cctv-feature">
@@ -2015,7 +1852,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             >
           </div>
         </div>
-
         <div style="margin-top: 2.5rem">
           <a href="{% url 'service_list' %}" class="btn-primary"
             >Get CCTV Quote</a
@@ -2023,7 +1859,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
         </div>
       </div>
 
-      <!-- Right: Visual grid -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
         <div
           style="
@@ -2182,9 +2017,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     NETWORKING SERVICES — Light Section
-══════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     NETWORKING SERVICES
+══════════════════════════════════════ -->
 <section class="section-pad section-light">
   <div class="container">
     <div style="text-align: center; max-width: 600px; margin: 0 auto 4rem">
@@ -2194,10 +2029,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
       </h2>
       <p style="color: #64748b; line-height: 1.7">
         Reliable, scalable network infrastructure designed for businesses of all
-        sizes — from small offices to multi-site enterprises.
+        sizes.
       </p>
     </div>
-
     <div class="grid-4">
       <div
         style="
@@ -2451,9 +2285,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════
      TESTIMONIALS
-══════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <section class="section-pad" style="background: #f1f5f9">
   <div class="container">
     <div style="text-align: center; max-width: 540px; margin: 0 auto 4rem">
@@ -2462,7 +2296,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
         What Our <span class="text-orange">Clients Say</span>
       </h2>
     </div>
-
     <div class="grid-3">
       <div class="testimonial-card">
         <div class="stars" style="margin-bottom: 1rem">★★★★★</div>
@@ -2474,8 +2307,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             margin: 0 0 1.5rem;
           "
         >
-          "Our entire office network was migrated in one weekend with zero
-          downtime. VoterX delivered exactly what they promised."
+          "Our entire office network was migrated over one weekend with zero
+          downtime. VoterX delivered exactly what they promised — on time and
+          within budget."
         </p>
         <div style="display: flex; align-items: center; gap: 0.75rem">
           <div
@@ -2525,7 +2359,8 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           "
         >
           "The CCTV installation for our 3 branches was done professionally. We
-          can monitor everything from our phones now."
+          can now monitor everything from our phones — the remote access works
+          perfectly."
         </p>
         <div style="display: flex; align-items: center; gap: 0.75rem">
           <div
@@ -2574,8 +2409,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
             margin: 0 0 1.5rem;
           "
         >
-          "Bought 20 laptops for our school lab. Great pricing, fast delivery,
-          and they set everything up for us."
+          "We bought 20 laptops for our school computer lab. Great pricing, fast
+          delivery, and the team set everything up and configured each machine
+          for us."
         </p>
         <div style="display: flex; align-items: center; gap: 0.75rem">
           <div
@@ -2617,9 +2453,9 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════
      CONTACT SECTION
-══════════════════════════════════════════ -->
+══════════════════════════════════════ -->
 <section class="section-pad section-dark">
   <div class="container">
     <div
@@ -2630,7 +2466,6 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
         align-items: start;
       "
     >
-      <!-- Left -->
       <div>
         <div class="badge badge-white">Get In Touch</div>
         <h2
@@ -2653,150 +2488,142 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
           Let's discuss your ICT needs. Our team will assess your requirements
           and provide a detailed proposal within 24 hours.
         </p>
-
-        <div style="display: flex; flex-direction: column; gap: 1.5rem">
-          <div class="contact-info-item">
-            <div
-              style="
-                width: 48px;
-                height: 48px;
-                background: rgba(249, 115, 22, 0.15);
-                border-radius: 14px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-              "
+        <div class="contact-info-item">
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: rgba(249, 115, 22, 0.15);
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            "
+          >
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#F97316"
+              stroke-width="2"
             >
-              <svg
-                width="22"
-                height="22"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="#F97316"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-            </div>
-            <div>
-              <div
-                style="
-                  color: rgba(255, 255, 255, 0.45);
-                  font-size: 0.78rem;
-                  margin-bottom: 4px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.08em;
-                "
-              >
-                Phone
-              </div>
-              <div style="color: white; font-weight: 600">+254 700 000 000</div>
-            </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
           </div>
-
-          <div class="contact-info-item">
+          <div>
             <div
               style="
-                width: 48px;
-                height: 48px;
-                background: rgba(249, 115, 22, 0.15);
-                border-radius: 14px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
+                color: rgba(255, 255, 255, 0.45);
+                font-size: 0.78rem;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
               "
             >
-              <svg
-                width="22"
-                height="22"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="#F97316"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
+              Phone
             </div>
-            <div>
-              <div
-                style="
-                  color: rgba(255, 255, 255, 0.45);
-                  font-size: 0.78rem;
-                  margin-bottom: 4px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.08em;
-                "
-              >
-                Email
-              </div>
-              <div style="color: white; font-weight: 600">
-                info@voterx.co.ke
-              </div>
-            </div>
+            <div style="color: white; font-weight: 600">+254 700 000 000</div>
           </div>
-
-          <div class="contact-info-item">
+        </div>
+        <div class="contact-info-item">
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: rgba(249, 115, 22, 0.15);
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            "
+          >
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#F97316"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+          <div>
             <div
               style="
-                width: 48px;
-                height: 48px;
-                background: rgba(249, 115, 22, 0.15);
-                border-radius: 14px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
+                color: rgba(255, 255, 255, 0.45);
+                font-size: 0.78rem;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
               "
             >
-              <svg
-                width="22"
-                height="22"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="#F97316"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+              Email
             </div>
-            <div>
-              <div
-                style="
-                  color: rgba(255, 255, 255, 0.45);
-                  font-size: 0.78rem;
-                  margin-bottom: 4px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.08em;
-                "
-              >
-                Location
-              </div>
-              <div style="color: white; font-weight: 600">Nairobi, Kenya</div>
+            <div style="color: white; font-weight: 600">info@voterx.co.ke</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: rgba(249, 115, 22, 0.15);
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-shrink: 0;
+            "
+          >
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#F97316"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </div>
+          <div>
+            <div
+              style="
+                color: rgba(255, 255, 255, 0.45);
+                font-size: 0.78rem;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+              "
+            >
+              Location
             </div>
+            <div style="color: white; font-weight: 600">Nairobi, Kenya</div>
           </div>
         </div>
       </div>
 
-      <!-- Right: Form -->
       <div class="contact-card">
         <h3 style="font-size: 1.5rem; margin: 0 0 1.75rem; color: var(--navy)">
           Request a Free Quote
@@ -2867,6 +2694,8 @@ Communications — Enterprise ICT Solutions{% endblock %} {% block extra_head %}
               padding: 1rem;
               font-size: 1rem;
               text-align: center;
+              border: none;
+              cursor: pointer;
             "
           >
             Send Request →
